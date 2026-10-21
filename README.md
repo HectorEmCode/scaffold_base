@@ -1,1 +1,1 @@
-# 🚀 NextCollege
+# 🚀 NextCollege base
