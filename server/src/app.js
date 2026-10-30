@@ -39,7 +39,7 @@ if (hasBuild(pwaPath)) {
   app.get('/app*', (req, res) => {
     res.send(`
       <div style="font-family:sans-serif;text-align:center;padding:50px;">
-        <h2>📱 PWA Mobile aún no compilada</h2>
+        <h2>🍔 Hamburger Rapid &bull; PWA Mobile aún no compilada</h2>
         <p>Ejecuta <code>npm run build:pwa</code> o compila con Docker para generar los archivos en <code>public/pwa</code>.</p>
         <p><a href="/">Volver al inicio</a> | <a href="/admin">Panel Admin</a></p>
       </div>
@@ -57,7 +57,7 @@ if (hasBuild(adminPath)) {
   app.get('/admin*', (req, res) => {
     res.send(`
       <div style="font-family:sans-serif;text-align:center;padding:50px;">
-        <h2>⚙️ Panel Admin aún no compilado</h2>
+        <h2>⚙️ Hamburger Rapid &bull; Panel Admin aún no compilado</h2>
         <p>Ejecuta <code>npm run build:admin</code> o compila con Docker para generar los archivos en <code>public/admin</code>.</p>
         <p><a href="/">Volver al inicio</a> | <a href="/app">PWA Mobile</a></p>
       </div>
@@ -78,28 +78,28 @@ if (hasBuild(ecommercePath)) {
       <html lang="es">
       <head>
         <meta charset="UTF-8" />
-        <title>NextCollege Rapid Platform</title>
+        <title>Hamburger Rapid &bull; Gourmet Fast Food</title>
         <style>
-          body { font-family: system-ui, -apple-system, sans-serif; background: #0f172a; color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-          .card { background: #1e293b; padding: 2.5rem; border-radius: 1rem; max-width: 650px; text-align: center; border: 1px solid #334155; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
-          h1 { color: #38bdf8; margin-bottom: 0.5rem; }
-          .badge { display: inline-block; background: #0284c7; color: white; padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; margin-bottom: 1.5rem; }
+          body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: #FFFBF5; color: #1E293B; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+          .card { background: #FFFFFF; padding: 2.5rem; border-radius: 1.25rem; max-width: 650px; text-align: center; border: 1px solid #E2E8F0; box-shadow: 0 20px 40px -15px rgba(0,0,0,0.07); }
+          h1 { color: #DC2626; margin-bottom: 0.5rem; font-size: 2.2rem; }
+          .badge { display: inline-block; background: #FEF3C7; color: #D97706; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; margin-bottom: 1.5rem; border: 1px solid #FDE68A; }
           .links { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
-          .btn { background: #2563eb; color: white; text-decoration: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; transition: background 0.2s; }
-          .btn:hover { background: #1d4ed8; }
-          .status { text-align: left; background: #0f172a; padding: 1rem; border-radius: 0.5rem; font-family: monospace; font-size: 0.85rem; margin-top: 1.5rem; }
+          .btn { background: #DC2626; color: white; text-decoration: none; padding: 0.75rem 1.25rem; border-radius: 0.75rem; font-weight: 600; transition: transform 0.2s; }
+          .btn:hover { transform: translateY(-2px); }
+          .status { text-align: left; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 1rem; border-radius: 0.75rem; font-family: monospace; font-size: 0.85rem; margin-top: 1.5rem; }
         </style>
       </head>
       <body>
         <div class="card">
-          <h1>🚀 NextCollege Rapid Platform</h1>
-          <div class="badge">Listo para Dokploy CI/CD</div>
-          <p>Servidor backend activo. Si estás viendo esta pantalla localmente, ejecuta <code>npm run build:all</code> para compilar las 3 capas, o despliega en Dokploy usando el <code>Dockerfile</code>.</p>
+          <h1>🍔 Hamburger Rapid</h1>
+          <div class="badge">👑 Primera Versión Comercial</div>
+          <p>Servidor backend activo. Si estás viendo esta pantalla localmente, ejecuta <code>npm run build:all</code> para sincronizar las 3 aplicaciones en <code>server/public</code>.</p>
           <div class="links">
             <a class="btn" href="/app">📱 PWA Mobile</a>
-            <a class="btn" href="/admin">⚙️ Panel Admin</a>
+            <a class="btn" style="background:#2563eb;" href="/admin">⚙️ Panel Admin</a>
             <a class="btn" style="background:#10b981;" href="/api/health">🩺 Health Check</a>
-            <a class="btn" style="background:#6366f1;" href="/api/products">📦 API Productos</a>
+            <a class="btn" style="background:#D97706;" href="/api/products">🍔 API Menú</a>
           </div>
           <div class="status">
             <div>• Puerto: ${PORT}</div>
@@ -118,11 +118,11 @@ async function start() {
   await db.initDB();
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`=======================================================`);
-    console.log(`🚀 NextCollege Platform ejecutándose en puerto ${PORT}`);
-    console.log(`   - E-commerce:  http://localhost:${PORT}/`);
-    console.log(`   - PWA Mobile:  http://localhost:${PORT}/app`);
-    console.log(`   - Panel Admin: http://localhost:${PORT}/admin`);
-    console.log(`   - API Health:  http://localhost:${PORT}/api/health`);
+    console.log(`🍔 Hamburger Rapid Platform ejecutándose en puerto ${PORT}`);
+    console.log(`   - Landing E-commerce: http://localhost:${PORT}/`);
+    console.log(`   - PWA Mobile:         http://localhost:${PORT}/app`);
+    console.log(`   - Panel Admin:        http://localhost:${PORT}/admin`);
+    console.log(`   - API Health:         http://localhost:${PORT}/api/health`);
     console.log(`=======================================================`);
   });
 }
